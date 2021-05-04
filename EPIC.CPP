@@ -1,7 +1,11 @@
-#include<fstream.h>
+#include<fstream>
 #include<conio.h>
 #include<string.h>
 #include<stdio.h>
+#include <iostream>
+
+using namespace std;
+
 struct date
  {
   int d,m,y;
@@ -59,9 +63,9 @@ class epic
   puts(fname);
   cout<<"gender\t";
   cout<<gender;
-  cout<<"\n date of birth (dd/mm/yyyy format)\t";
+  cout<<"\n date of birth (dd mm yyyy format)\t";
   cout<<dob.d<<dob.m<<dob.y;;
-  cout<<"\n date of issue (dd/mm/yyyy format)\t";
+  cout<<"\n date of issue (dd mm yyyy format)\t";
   cout<<doi.d<<doi.m<<doi.y;
   cout<<"\n address\t";
   puts(address);
@@ -112,7 +116,7 @@ void epic::getd()
    int dchk=0;
    while(dchk==0)
    {
-    cout<<"\nenter date of birth (dd/mm/yyyy format)\t";
+    cout<<"\nenter date of birth (dd mm yyyy format)\t";
     cin>>dob.d>>dob.m>>dob.y;
     dchk=dob.chkdate();
     if(dchk==0)
@@ -555,9 +559,8 @@ void count_grtyr()
  f.close();
 }
 
-void main()
+int main()
 {
- clrscr();
  char ans1='y';
  do
  {
@@ -741,7 +744,7 @@ case 6:int ch4;
  cout<<"\ndo you want to continue?";
  cin>>ans1;
  }while(ans1=='y'||ans1=='Y');
- getch();
+ return 0;
 
 }
 
